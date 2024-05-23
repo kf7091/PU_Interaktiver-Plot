@@ -14,17 +14,24 @@ def read_activity_data():
     hr_max = 200    # assume maximal heart rate
     for index, observation in activity_data.iterrows():
         zone = "keine Angabe"
+        color = "lightgray"
         if observation["HeartRate"] < 0.6 * hr_max and observation["HeartRate"] >= 0.5 * hr_max:
             zone = "sehr leicht"
+            color = "lightgreen"
         elif observation["HeartRate"] < 0.7 * hr_max and observation["HeartRate"] >= 0.6 * hr_max:
             zone = "leicht"
+            color = "green"
         elif observation["HeartRate"] < 0.8 * hr_max and observation["HeartRate"] >= 0.7 * hr_max:
             zone = "moderat"
+            color = "yellow"
         elif observation["HeartRate"] < 0.9 * hr_max and observation["HeartRate"] >= 0.8 * hr_max:
             zone = "hart"
+            color = "red"
         elif observation["HeartRate"] < hr_max and observation["HeartRate"] >= 0.9 * hr_max:
             zone = "sehr hart"
+            color = "darkred"
         activity_data.at[index, 'Zone'] = zone
+        activity_data.at[index, 'Color'] = color
 
     return activity_data
 
