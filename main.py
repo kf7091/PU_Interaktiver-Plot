@@ -84,7 +84,7 @@ zeit_in_zone = zeit_in_zone.rename_axis('Zone').reset_index(name='Zeit / s')
 # Überschrift für die Tabelle
 st.write('#### Zeit / Durchschnittsleistung in Zonen :')
 
-# Tabelle für Durschnittsleistung in Zonen erstellen
+# Tabelle für Durchschnittsleistung in Zonen erstellen
 power_zone = activity_data.groupby("Zone")["PowerOriginal"].mean().reset_index()
 power_zone = power_zone.rename(columns={"PowerOriginal": "Durschnittsleistung / W"})
 
