@@ -1,6 +1,6 @@
 ## Requirements
 - pandas
-- plottly
+- plotly
 - streamlit
 
 ### oder
