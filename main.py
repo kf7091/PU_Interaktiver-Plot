@@ -7,9 +7,27 @@ import streamlit as st
 if 'current_user' not in st.session_state:
     st.session_state.current_user = 'None'
 
+if "visibility" not in st.session_state:
+    st.session_state.visibility = "visible"
+    st.session_state.disabled = False
 
+if "hr_max" not in st.session_state:
+    st.session_state.hr_max = 200
 
-activity_data = read_activity_data()
+st.write('# Leistung und HF in Zonen') # Überschrift
+
+col1, col2 = st.columns(2)
+with col1:
+    hr_max = st.text_input(
+        "Enter max heart rate:",
+        label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled,
+    )
+    if hr_max:
+        st.write("You entered: ", hr_max, "bpm")
+        st.session_state.hr_max = float(hr_max)
+
+activity_data = read_activity_data(st.session_state.hr_max)
 
 fig_hr = go.Figure(
     data=go.Scatter(

@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 
-def read_activity_data():
+
+def read_activity_data(hr_max):
     #load data
     activity_data = pd.read_csv('activity.csv', usecols=["Duration", "PowerOriginal", "HeartRate"])
 
@@ -11,7 +12,7 @@ def read_activity_data():
     #    activity_data["Duration"][i] = activity_data["Duration"][i] + activity_data["Duration"][i-1]
 
     # add new collum "zones" with information on zone
-    hr_max = 200    # assume maximal heart rate
+        # assume maximal heart rate
     for index, observation in activity_data.iterrows():
         zone = "keine Angabe"
         color = "lightgray"
