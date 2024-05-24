@@ -6,9 +6,9 @@ def read_activity_data():
     activity_data = pd.read_csv('activity.csv', usecols=["Duration", "PowerOriginal", "HeartRate"])
 
     #convert duration to absolute time
-    activity_data["Duration"][0] = 0
-    for i in range(1, len(activity_data)):
-        activity_data["Duration"][i] = activity_data["Duration"][i] + activity_data["Duration"][i-1]
+    activity_data["Duration"] = range(len(activity_data))
+    #for i in range(1, len(activity_data)):
+    #    activity_data["Duration"][i] = activity_data["Duration"][i] + activity_data["Duration"][i-1]
 
     # add new collum "zones" with information on zone
     hr_max = 200    # assume maximal heart rate
