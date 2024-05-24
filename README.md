@@ -1,6 +1,5 @@
 ## Requirements
 - pandas
-- numpy
 - plottly
 - streamlit
 
@@ -15,6 +14,7 @@
 - (optional) aktivieren Sie Ihr Virtual Environment
 - führen Sie den Befehl `streamlit run main.py` aus
 - das Programm zeigt nun die EKG-Daten und Power-Daten an
+- Durch eingabe der Maximalen Herzfrequenz werden die Zonen visuell angepasst
 
 ## Befehle um Virtual Environment zu erstellen
 ### Windows:
