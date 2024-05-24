@@ -16,7 +16,7 @@
 - das Programm wird im Browser geöffnet
 ![alt text](screenshot.png)
 - das Programm zeigt nun die EKG-Daten und Power-Daten an
-- Durch eingabe der Maximalen Herzfrequenz werden die Zonen visuell angepasst
+- Durch Eingabe der maximalen Herzfrequenz werden die Zonen visuell angepasst und die 
 
 
 ## Befehle um Virtual Environment zu erstellen
